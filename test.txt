@@ -1,0 +1,30 @@
+int binpow(int a, int b){
+	int res = 1;
+	while(b>0){
+		if(b%2 == 1){
+			res = res*a;
+		}
+		b = b/2;
+		a = a*a;
+	}
+	return res;
+}
+
+int a = 5;
+int main(int f){
+	int a = 1;
+	int b = 6;
+	a = b+a*(a-b*(b+a)-(4*3) + (binpow(a,b)));
+	if(!(a > 2 && b > 4)){
+		while(a < 6){
+			a=a+1;
+		}
+	}
+	else {
+		b = 5;
+	}
+
+	int c = <int>binpow(a,b);
+	std::cout << c << endl;
+	return 0;
+}
