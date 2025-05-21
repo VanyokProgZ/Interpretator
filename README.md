@@ -1,0 +1,2 @@
+# Interpretator
+Ferzik+-
