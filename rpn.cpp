@@ -51,7 +51,7 @@ std::vector<Lexem> translate_to_rpn(std::vector<Lexem>& infix) {
 		else if (el.type == round_bracket_open) {
 			stack.push(el);
 		}
-		else if (/*el.type == 53 || */el.type == var_name || el.type==new_var || el.type==double_literal || el.type==int_literal || el.type == char_symbol || el.type==new_static_array || el.type==static_array) {
+		else if (/*el.type == 53 || */el.type == var_name || el.type==new_var || el.type==double_literal || el.type==int_literal || el.type == char_symbol || el.type==new_static_array || el.type==static_array || el.type==_string_) {
 			if (el.type == new_static_array) {
 				last_var = 1;
 			}

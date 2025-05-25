@@ -2512,7 +2512,7 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 			}
 
 			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
-
+			
 			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
 			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
 
@@ -10810,6 +10810,29 @@ size_t Ariphmetic_module::double_calc(Lexem& rpn_obj) {
 	return 0;
 }
 
+//STRING
+size_t Ariphmetic_module::string_calc(Lexem& rpn_obj) {
+	Lexem end_of_block("", unknown_name, unknown_name, 0, "", "");
+	Lexem main_data("", unknown_name, unknown_name, 0, "", "");
+	Lexem begin_of_block("", unknown_name, unknown_name, 0, "", "");
+	MemoryBlock mem;
+	std::vector<Lexem> data;
+
+	if (rpn_obj.type_signature == "ostream&::operator<<::(::ostream&::string::)") {
+		std::string arg;
+		if (processor->call_stack.stack.back().title.link) {
+			arg = processor->call_stack.stack[processor->call_stack.stack.back().title.link].data[0].text;
+		}
+		else {
+			arg = processor->call_stack.stack.back().data[0].text;
+		}
+		std::cout << arg;
+		processor->call_stack.pop();
+	}
+
+	return 0;
+}
+
 void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_Assembler& lexem_queue_asm) {
 
 	Lexem end_of_block("", unknown_name, unknown_name, 0, "","");
@@ -10823,7 +10846,7 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 
 		if (rpn_form[i].type == _data_type_) continue;
 
-		if (in(rpn_form[i].type, { double_literal,int_literal, var_name,new_var,char_symbol,new_static_array,static_array })) {
+		if (in(rpn_form[i].type, { double_literal,int_literal, var_name,new_var,char_symbol,new_static_array,static_array,_string_ })) {
 
 			switch (rpn_form[i].type)
 			{
@@ -10832,6 +10855,14 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 				main_data = Lexem(rpn_form[i].text, int_literal, _int_, 0, "int","int");
 				begin_of_block = Lexem(rpn_form[i].text, _timed_memory_block_begin, _int_, 1, "int","int");
 				main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = std::stoi(rpn_form[i].text);
+				mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+				processor->call_stack.push(mem);
+				break;
+			case _string_:
+				end_of_block = Lexem("end block", _timed_memory_block_end, _string_, 1, "end block", "string");
+				main_data = Lexem(rpn_form[i].text, _string_, _string_, 0, "string", "string");
+				begin_of_block = Lexem("", _timed_memory_block_begin, _string_, 1, "string", "string");
+				main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = rpn_form[i].text.size();;
 				mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
 				processor->call_stack.push(mem);
 				break;
@@ -10846,13 +10877,30 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 			case char_symbol:
 				end_of_block = Lexem("end block", _timed_memory_block_end, _char_, 1, "end block", "char");
 				main_data = Lexem(rpn_form[i].text, char_symbol, _char_, 0, "char", "char");
-				begin_of_block = Lexem(rpn_form[i].text, _timed_memory_block_begin, _double_, 1, "char", "char");
+				begin_of_block = Lexem("", _timed_memory_block_begin, _double_, 1, "char", "char");
 				main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = rpn_form[i].text[0];
 				mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
 				processor->call_stack.push(mem);
 				break;
 			case new_var:
-
+				for (size_t stack_index = processor->call_stack.size() - 1; stack_index > 0; stack_index--) {
+					if (processor->call_stack.stack[stack_index].title.text == rpn_form[i].text) {
+						throw j_error("Variable " + rpn_form[i].text + " already exist");
+					}
+					else if (processor->call_stack.stack[stack_index].data[0].type==_ret_from_func_mark) {
+						bool found_si2 = 0;
+						for (size_t si2 = stack_index - 1; si2 > stack_index - 1 - processor->call_stack.stack[stack_index].data[0].cs_int32; si2--) {
+							if (processor->call_stack.stack[stack_index].title.text == rpn_form[i].text) {
+								found_si2 = 1;
+								break;
+							}
+						}
+						if (found_si2) {
+							throw j_error("Variable " + rpn_form[i].text + " already exist");
+						}
+						break;
+					}
+				}
 				end_of_block = Lexem("end block", _timed_memory_block_end, rpn_form[i].data_type, 1, "end block", rpn_form[i].returned_type);
 				data = std::vector<Lexem>(processor->Class_names_list.get_class_size(rpn_form[i].type_signature));
 				begin_of_block = Lexem(rpn_form[i].text, _timed_memory_block_begin, rpn_form[i].data_type, processor->Class_names_list.get_class_size(rpn_form[i].type_signature), rpn_form[i].type_signature,rpn_form[i].returned_type);
@@ -10883,7 +10931,24 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 				processor->call_stack.push(mem);
 				break;
 			case new_static_array:
-
+				for (size_t stack_index = processor->call_stack.size() - 1; stack_index > 0; stack_index--) {
+					if (processor->call_stack.stack[stack_index].title.text == rpn_form[i].text) {
+						throw j_error("Variable " + rpn_form[i].text + " already exist");
+					}
+					else if (processor->call_stack.stack[stack_index].data[0].type == _ret_from_func_mark) {
+						bool found_si2 = 0;
+						for (size_t si2 = stack_index - 1; si2 > stack_index - 1 - processor->call_stack.stack[stack_index].data[0].cs_int32; si2--) {
+							if (processor->call_stack.stack[stack_index].title.text == rpn_form[i].text) {
+								found_si2 = 1;
+								break;
+							}
+						}
+						if (found_si2) {
+							throw j_error("Variable " + rpn_form[i].text + " already exist");
+						}
+						break;
+					}
+				}
 				end_of_block = Lexem("end block", _timed_memory_block_end, rpn_form[i].data_type, 1, "end block", rpn_form[i].returned_type);
 				data = std::vector<Lexem>(processor->Class_names_list.get_class_size(rpn_form[i].type_signature));
 				begin_of_block = Lexem(rpn_form[i].text, _timed_memory_block_begin, rpn_form[i].data_type, processor->Class_names_list.get_class_size(rpn_form[i].type_signature), rpn_form[i].type_signature, rpn_form[i].returned_type);
@@ -10978,6 +11043,15 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 			}
 			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "char") {
 				result_signal = char_calc(rpn_form[i]);
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "string") {
+				result_signal = string_calc(rpn_form[i]);
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "float") {
+				result_signal = float_calc(rpn_form[i]);
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "double") {
+				result_signal = double_calc(rpn_form[i]);
 			}
 			
 

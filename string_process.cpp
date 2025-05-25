@@ -16,12 +16,21 @@ std::string delete_std(const std::string& s) {
     return std::regex_replace(s, pattern, "");
 }
 
-std::vector<std::string> split(const std::string& s, const std::string& d, bool del) {
+std::vector<std::string> split(const std::string& s, const std::string& d, bool del) {//не использовать комбинации с \ в качестве делиметра
     std::vector<std::string> res;
-    
+    bool text_ = 0;
     std::string c = "";
     for (size_t i = 0; i < s.size(); i++) {
-
+        
+        if (s[i] == '\"') {
+            if ((i > 0 && s[i - 1] != '\\')||i==0) {
+                text_ = !text_;
+            }
+        }
+        if (text_) {
+            c += s[i];
+            continue;
+        }
         c += s[i];
         if (c.size() >= d.size()) {
             bool join = 1;
@@ -72,10 +81,62 @@ void insert_space(std::string& s, size_t pos) { //вставляет пробел по индексу
     s[pos] = ' ';
 }
 
-void past_spaces(std::string& s) {  //вставляет пробелы для удобного парсинга
-    
-    for (size_t i = 0; i < s.size(); i++) {
+void ecran_symbols_in_string(std::string& s) {
+    for (long long i = s.size() - 1; i > -1; i--) {
+        if (i > 0 && s[i - 1] == '\\' && in(s[i], {'t','n','\'','\"','b','?','\\','a','f','r','v'})) {
+            switch (s[i])
+            {
+            case 't':
+                s[i - 1] = '\t';
+                break;
+            case 'n':
+                s[i - 1] = '\n';
+                break;
+            case '\'':
+                s[i - 1] = '\'';
+                break;
+            case '\"':
+                s[i - 1] = '\"';
+                break;
+            case 'b':
+                s[i - 1] = '\b';
+                break;
+            case '?':
+                s[i - 1] = '\?';
+                break;
+            case '\\':
+                s[i - 1] = '\\';
+                break;
+            case 'a':
+                s[i - 1] = '\a';
+                break;
+            case 'f':
+                s[i - 1] = '\f';
+                break;
+            case 'r':
+                s[i - 1] = '\r';
+                break;
+            case 'v':
+                s[i - 1] = '\v';
+                break;
+            }
+            s.erase(s.begin() + i);
+        }
+    }
+}
 
+void past_spaces(std::string& s) {  //вставляет пробелы для удобного парсинга
+    bool text_ = false;
+    for (size_t i = 0; i < s.size(); i++) {
+        if (s[i] == '\"') {
+            if ((i > 0 && s[i - 1] != '\\') || i == 0){
+                text_ = !text_;
+                continue;
+            }
+            else if (i > 0 && s[i - 1] == '\\') {
+                continue;
+            }
+        }
         if (in(s[i], { '+', '-', '=', '&' ,'|','*','/','}','{','(',')','%','!','<','>','~','^','?',',','[',']',';','\'','\"'})) {
 
             if (i + 1 < s.size() && ((s[i] == s[i + 1] && in(s[i], { '+','-', '&', '|','<','>','=' })) || (in(s[i], { '<','>','=','!','+','-','*','/','&','%','|','^'}) && s[i + 1] == '='))) {
@@ -104,28 +165,6 @@ int check_digit(const std::string& s) {
     return 1 + p;
 }
 
-void Hide_Strings(std::string& s, size_t pos, handleStrings& h) {   //прячет строки программы ""
-    std::string n = "";
-    std::string c = "";
-    for (size_t i = 0; i < s.size(); i++) {
-        n += s[i];
-        if (s[i] == '"') {
-            size_t j = i + 1;
-            while (1) {
-                if (s[j] == '"') {
-                    i = j;
-                    n += s[j];
-                    h.NewString(c, pos);
-                    c = "";
-                    break;
-                }
-                c += s[j++];
-            }
-        }
-    }
-    s = std::move(n);
-}
-
 void cut_white_begin(std::string& s) {  //обрезает пробелы в начале
     
     std::string res = "";
@@ -140,7 +179,14 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
     
     auto v = split(row);
     for (size_t i = 0; i < v.size(); i++) {
-
+        if (next_char && v[i].size() > 2) {
+            throw j_error("char symbol "+v[i]+" must has len=1");
+        }
+        if (v[i][0] == '\"') {
+            ecran_symbols_in_string(v[i]);
+            res.push_back(Lexem(v[i].substr(1, v[i].size()-2), _string_, _string_, 0, "string", "string"));
+            continue;
+        }
         if (v[i].size() == 1) {
             if (v[i] == "'" && res.back().text != "\\") {
                 if (next_char) next_char = 0;
@@ -150,7 +196,14 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 continue;
             }
             else if (next_char) {
-                res.push_back(Lexem(v[i], char_symbol, _char_, 0, "char", "char"));
+                if (res.back().text != "\\") {
+                    std::string tmpstr = ""; tmpstr += v[i - 1]; tmpstr += v[i];
+                    ecran_symbols_in_string(tmpstr);
+                    res.push_back(Lexem(tmpstr, char_symbol, _char_, 0, "char", "char"));
+                }
+                else {
+                    res.push_back(Lexem(v[i], char_symbol, _char_, 0, "char", "char"));
+                }
                 continue;
             }
             else if (v[i] == "+") {
@@ -323,7 +376,21 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
             next_class_name = next_var_name = 0;
         }
         else if (v[i].size() == 2) {
-            if (v[i] == "++") {
+            if (next_char) {
+                if (v[i][0] == '\\') {
+                    std::string tmpstr =v[i];
+                    ecran_symbols_in_string(tmpstr);
+                    if (tmpstr.size() > 1) {
+                        throw j_error("unknown ecran char symbol " + tmpstr);
+                    }
+                    res.push_back(Lexem(tmpstr, char_symbol, _char_, 0, "char", "char"));
+                }
+                else {
+                    throw j_error("char symbol " + v[i] + " must has len=1");
+                }
+            continue;
+            }
+            else if (v[i] == "++") {
                 res.push_back(Lexem("++", operator_plus_plus,res.back().data_type,1,"operator++", ""));
             }
             else if (v[i] == "--") {

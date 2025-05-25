@@ -104,6 +104,7 @@ enum LEXEM_TYPES
 	var_name = 599,
 	new_var = 598,
 	_data_type_ = 597,
+	_string_ = 507,
 
 	//пользовательская типизация
 	_class_ = 550,

@@ -10,6 +10,6 @@ int main(int argc, char* argv[])
         processor.run();
     }
     catch (std::exception& e) {
-        std::cout << e.what() << '\n';
+        std::cout <<'\n'<< e.what() << '\n';
     }
 }

@@ -28,4 +28,6 @@ void Hide_Strings(std::string&, size_t, handleStrings&);
 
 void cut_white_begin(std::string&);
 
+void ecran_symbols_in_string(std::string& s);
+
 std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC);
