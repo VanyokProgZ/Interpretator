@@ -1,0 +1,30 @@
+name: Build application (Linux)
+
+on: [push, pull_request]
+
+jobs:
+  linux-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      shell: bash
+      run: |
+        export CMAKE_BUILD_PARALLEL_LEVEL=4
+        mkdir -p build
+        cmake \
+          -S . \
+          -B build \
+          -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      shell: bash
+      run: |
+        cmake --build build --config Release --parallel 4
+        
+    - name: RUN
+      shell: bash
+      run: |
+        ./build/interpret
