@@ -8,7 +8,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    - name: Install ncurses
+        run:|
+           sudo apt-get update && sudo apt-get install -y libncurses-dev
     - name: Configure CMake
       shell: bash
       run: |
