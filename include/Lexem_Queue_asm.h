@@ -1,5 +1,6 @@
 #pragma once
 #include "processor.h"
+#include "ALU.h"
 
 class Ariphmetic_module;
 

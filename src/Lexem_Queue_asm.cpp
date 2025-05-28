@@ -1,5 +1,4 @@
 #include "Lexem_Queue_asm.h"
-#include "ALU.h"
 
 size_t Lexem_Queue_Assembler::instruction_definer() {
 	auto rpn_form = translate_to_rpn(lexem_queue);

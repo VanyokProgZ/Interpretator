@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "string_process.h"
+#include "preprocess.h"
 
 class CodeSegment {
 	size_t i;

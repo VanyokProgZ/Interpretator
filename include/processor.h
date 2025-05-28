@@ -6,6 +6,7 @@
 #include "rpn.h"
 #include "call_stack.h"
 
+
 class Lexem_Queue_Assembler;
 
 class Processor {

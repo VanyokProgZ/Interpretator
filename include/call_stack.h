@@ -1,5 +1,5 @@
 #pragma once
-#include "Lexem.h";
+#include "Lexem.h"
 #include <stack>
 
 class MemoryBlock {

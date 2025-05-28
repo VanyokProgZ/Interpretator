@@ -156,7 +156,7 @@ void past_spaces(std::string& s) {  //вставляет пробелы для удобного парсинга
 
 int check_digit(const std::string& s) {
 
-    bool p = 0;
+    int p = 0;
     for (auto& el : s) {
         if (!in(el, { '0','1','2','3','4','5','6','7','8','9','0' }) && el!='.') return 0;
         if (el == '.') p++;

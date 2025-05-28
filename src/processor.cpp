@@ -1,8 +1,6 @@
 #include "processor.h"
 #include "Lexem_Queue_asm.h"
 
-
-
 #ifdef _WIN32
 #include <conio.h>
 #define CLS "cls"
