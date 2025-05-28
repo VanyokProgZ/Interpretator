@@ -19,4 +19,4 @@ jobs:
     - name: Run
       shell: bash
       run: |
-        ${PWD}/build/interpret.exe
+        ${PWD}/build/samples/Release/interpret.exe
