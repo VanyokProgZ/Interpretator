@@ -16,10 +16,12 @@ public:
 	void Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_Assembler& lexem_queue_asm);
 
 	size_t int_calc(Lexem& rpn_);
+	size_t int_calc2(Lexem& rpn_);
 	size_t bool_calc(Lexem& rpn_);
 	size_t char_calc(Lexem& rpn_);
 	size_t float_calc(Lexem& rpn_);
 	size_t double_calc(Lexem& rpn_);
 	size_t string_calc(Lexem& rpn_);
 	size_t long_long_calc(Lexem& rpn_);
+	size_t uchar_calc(Lexem& rpn_);
 };

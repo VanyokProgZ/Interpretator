@@ -1,39 +1,25 @@
-int jopa(int n, int prime[0])
-{
-int ind = 2;
-while(ind < n+1){
-	prime[ind] = 1;
-	ind = ind + 1;
-}
-int j;
-ind = 2;
-while(ind<=n){
-	if(prime[ind]){
-		if(ind*ind <= n){
-			j = ind*ind;
-			while(j<=n){
-				prime[j] = 0;
-				j = j + ind;
-			}
-		}
-	}
-	ind = ind+1;
-	
-}
-return 0;
-}
+# INSERT_FILE MATH.txt
+# INSERT_FILE ALGORITHM.txt
+int res = 0;
 
 int main(){
-	int n;
-	cin >> n;
-	int prime[n+1];
-	<int>jopa(n, prime[0]);
-	int ind = 0;
-	while(ind <= n){
-		if(prime[ind]){
-			cout << ind << ' ';
-		}
-		ind = ind + 1;
-	}
-	return 0;
+
+	int a[2][2];
+	int b[2][2];
+	int c[2][2];
+	
+	a[0][0] = 1;
+	a[0][1] = 2;
+	a[1][0] = 3;
+	a[1][1] = 4;
+	b[0][0] = 11;
+	b[0][1] = 22;
+	b[1][0] = 33;
+	b[1][1] = 44;
+	cout << a[0][0] << ' ' << a[0][1] << endl << a[1][0] << ' ' << a[1][1] << endl;
+	cout << b[0][0] << ' ' << b[0][1] << endl << b[1][0] << ' ' << b[1][1] << endl;
+	
+	res = <int>mult_matrix(a[0][0], b[0][0], c[0][0], 2,2,2);
+	cout << c[0][0] << ' ' << c[0][1] << endl << c[1][0] << ' ' << c[1][1] << endl;
+return 0;
 }

@@ -56,6 +56,10 @@ void Processor::run() {
 
 		auto lexems_row = lexemize_row(current_row, Class_names_list);
 
+
+
+
+
 		for (size_t i = 0; i < lexems_row.size(); i++) {
 			queue_assembler.push_back(lexems_row[i]);
 		}

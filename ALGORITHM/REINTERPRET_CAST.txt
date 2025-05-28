@@ -1,0 +1,31 @@
+int int_to_uchar_array(int int_array[0], uchar char_array[0], int n) {
+  int i = 0;
+  int j = 0;
+  uchar byte = 0;
+  int char_index = 0;
+  int int_value = 0;
+  int temp_value = 0;
+  int k = 0;
+  uchar trnslt = 0;
+  while (i < n) {
+    int_value = int_array[i];
+    j = 0;
+
+    while (j < 4) {
+      temp_value = int_value;
+      k = 0;
+      while (k < j) {
+        temp_value = temp_value / 256;
+        k = k + 1;
+      }
+
+      byte = trnslt + (temp_value % 256);
+
+      char_index = i * 4 + j;
+      char_array[char_index] = byte;
+      j = j + 1;
+    }
+    i = i + 1;
+  }
+  return 0;
+}

@@ -30,6 +30,21 @@ std::map<std::string, std::string> operators_ret_types = {
 	{"bool::operator-::(::long_long::)", "bool"},
 	{"bool::operator-::(::bool::)", "bool"},
 
+	{"bool::operator&::(::int::)", "bool"},
+	{"bool::operator&::(::char::)", "bool"},
+	{"bool::operator&::(::long_long::)", "bool"},
+	{"bool::operator&::(::bool::)", "bool"},
+
+	{"bool::operator|::(::int::)", "bool"},
+	{"bool::operator|::(::char::)", "bool"},
+	{"bool::operator|::(::long_long::)", "bool"},
+	{"bool::operator|::(::bool::)", "bool"},
+
+	{"bool::operator^::(::int::)", "bool"},
+	{"bool::operator^::(::char::)", "bool"},
+	{"bool::operator^::(::long_long::)", "bool"},
+	{"bool::operator^::(::bool::)", "bool"},
+
 	{"bool::operator-::(::)", "bool"},
 
 	{"bool::operator*::(::int::)", "bool"},
@@ -121,8 +136,24 @@ std::map<std::string, std::string> operators_ret_types = {
 	{"int::operator+::(::float::)", "int"},
 	{"int::operator+::(::double::)", "int"},
 	{"int::operator+::(::char::)", "int"},
+	{ "int::operator+::(::uchar::)", "int" },
 	{"int::operator+::(::long_long::)", "int"},
 	{"int::operator+::(::bool::)", "int" },
+
+	{ "int::operator&::(::int::)", "int" },
+	{ "int::operator&::(::char::)", "int" },
+	{ "int::operator&::(::long_long::)", "int" },
+	{ "int::operator&::(::bool::)", "int" },
+
+	{ "int::operator|::(::int::)", "int" },
+	{ "int::operator|::(::char::)", "int" },
+	{ "int::operator|::(::long_long::)", "int" },
+	{ "int::operator|::(::bool::)", "int" },
+
+	{ "int::operator^::(::int::)", "int" },
+	{ "int::operator^::(::char::)", "int" },
+	{ "int::operator^::(::long_long::)", "int" },
+	{ "int::operator^::(::bool::)", "int" },
 
 	{"int::operator=::(::int::)", "int&"},
 	{"int::operator=::(::float::)", "int&"},
@@ -142,6 +173,7 @@ std::map<std::string, std::string> operators_ret_types = {
 	{"int::operator-::(::float::)", "int"},
 	{"int::operator-::(::double::)", "int"},
 	{"int::operator-::(::char::)", "int"},
+	{ "int::operator-::(::uchar::)", "int" },
 	{"int::operator-::(::long_long::)", "int"},
 	{"int::operator-::(::bool::)", "int" },
 
@@ -151,6 +183,7 @@ std::map<std::string, std::string> operators_ret_types = {
 	{"int::operator*::(::float::)", "int"},
 	{"int::operator*::(::double::)", "int"},
 	{"int::operator*::(::char::)", "int"},
+	{ "int::operator*::(::uchar::)", "int" },
 	{"int::operator*::(::long_long::)", "int"},
 	{"int::operator*::(::bool::)", "int" },
 
@@ -158,6 +191,7 @@ std::map<std::string, std::string> operators_ret_types = {
 	{"int::operator/::(::float::)", "int"},
 	{"int::operator/::(::double::)", "int"},
 	{"int::operator/::(::char::)", "int"},
+	{ "int::operator/::(::uchar::)", "int" },
 	{"int::operator/::(::long_long::)", "int"},
 	{ "int::operator/::(::bool::)", "int" },
 
@@ -437,6 +471,21 @@ std::map<std::string, std::string> operators_ret_types = {
 	{ "char::operator=::(::char::)", "char&" },
 	{ "char::operator=::(::long_long::)", "char&" },
 
+	{ "char::operator&::(::int::)", "char" },
+	{ "char::operator&::(::char::)", "char" },
+	{ "char::operator&::(::long_long::)", "char" },
+	{ "char::operator&::(::bool::)", "char" },
+
+	{ "char::operator|::(::int::)", "char" },
+	{ "char::operator|::(::char::)", "char" },
+	{ "char::operator|::(::long_long::)", "char" },
+	{ "char::operator|::(::bool::)", "char" },
+
+	{ "char::operator^::(::int::)", "char" },
+	{ "char::operator^::(::char::)", "char" },
+	{ "char::operator^::(::long_long::)", "char" },
+	{ "char::operator^::(::bool::)", "char" },
+
 	{ "char&::operator=::(::string::)", "char&" },
 	{ "char&::operator=::(::int::)", "char&" },
 	{ "char&::operator=::(::float::)", "char&" },
@@ -525,12 +574,164 @@ std::map<std::string, std::string> operators_ret_types = {
 	{ "char::operator%::(::long_long::)", "char" },
 	{ "char::operator%::(::char::)", "char" },
 
+	//unsigned char
+	{ "uchar::operator+::(::int::)", "uchar" },
+	{ "uchar::operator+::(::float::)", "uchar" },
+	{ "uchar::operator+::(::double::)", "uchar" },
+	{ "uchar::operator+::(::char::)", "uchar" },
+	{ "uchar::operator+::(::uchar::)", "uchar" },
+	{ "uchar::operator+::(::long_long::)", "uchar" },
+
+	{ "uchar::operator=::(::string::)", "uchar&" },
+	{ "uchar::operator=::(::int::)", "uchar&" },
+	{ "uchar::operator=::(::float::)", "uchar&" },
+	{ "uchar::operator=::(::double::)", "uchar&" },
+	{ "uchar::operator=::(::char::)", "uchar&" },
+	{ "uchar::operator=::(::uchar::)", "uchar&" },
+	{ "uchar::operator=::(::long_long::)", "uchar&" },
+
+
+	{ "uchar::operator&::(::int::)", "uchar" },
+	{ "uchar::operator&::(::char::)", "uchar" },
+	{ "uchar::operator&::(::uchar::)", "uchar" },
+	{ "uchar::operator&::(::long_long::)", "uchar" },
+	{ "uchar::operator&::(::bool::)", "uchar" },
+
+	{ "uchar::operator|::(::int::)", "uchar" },
+	{ "uchar::operator|::(::char::)", "uchar" },
+	{ "uchar::operator|::(::uchar::)", "uchar" },
+	{ "uchar::operator|::(::long_long::)", "uchar" },
+	{ "uchar::operator|::(::bool::)", "uchar" },
+
+	{ "uchar::operator^::(::int::)", "uchar" },
+	{ "uchar::operator^::(::char::)", "uchar" },
+	{ "uchar::operator^::(::uchar::)", "uchar" },
+	{ "uchar::operator^::(::long_long::)", "uchar" },
+	{ "uchar::operator^::(::bool::)", "uchar" },
+
+	{ "uchar&::operator=::(::string::)", "uchar&" },
+	{ "uchar&::operator=::(::int::)", "uchar&" },
+	{ "uchar&::operator=::(::float::)", "uchar&" },
+	{ "uchar&::operator=::(::double::)", "uchar&" },
+	{ "uchar&::operator=::(::char::)", "uchar&" },
+	{ "uchar&::operator=::(::uchar::)", "uchar&" },
+	{ "uchar&::operator=::(::long_long::)", "uchar&" },
+
+	{ "uchar::operator-::(::int::)", "uchar" },
+	{ "uchar::operator-::(::float::)", "uchar" },
+	{ "uchar::operator-::(::double::)", "uchar" },
+	{ "uchar::operator-::(::char::)", "uchar" },
+	{ "uchar::operator-::(::uchar::)", "uchar" },
+	{ "uchar::operator-::(::long_long::)", "uchar" },
+
+	{ "uchar::operator-::(::)", "char" },
+
+	{ "uchar::operator*::(::int::)", "uchar" },
+	{ "uchar::operator*::(::float::)", "uchar" },
+	{ "uchar::operator*::(::double::)", "uchar" },
+	{ "uchar::operator*::(::char::)", "uchar" },
+	{ "uchar::operator*::(::uchar::)", "uchar" },
+	{ "uchar::operator*::(::long_long::)", "uchar" },
+
+	{ "uchar::operator/::(::int::)", "uchar" },
+	{ "uchar::operator/::(::float::)", "uchar" },
+	{ "uchar::operator/::(::double::)", "uchar" },
+	{ "uchar::operator/::(::char::)", "uchar" },
+	{ "uchar::operator/::(::uchar::)", "uchar" },
+	{ "uchar::operator/::(::long_long::)", "uchar" },
+
+	{ "uchar::operator>::(::int::)", "bool" },
+	{ "uchar::operator>::(::float::)", "bool" },
+	{ "uchar::operator>::(::double::)", "bool" },
+	{ "uchar::operator>::(::char::)", "bool" },
+	{ "uchar::operator>::(::uchar::)", "bool" },
+	{ "uchar::operator>::(::long_long::)", "bool" },
+
+	{ "uchar::operator<::(::int::)", "bool" },
+	{ "uchar::operator<::(::float::)", "bool" },
+	{ "uchar::operator<::(::double::)", "bool" },
+	{ "uchar::operator<::(::char::)", "bool" },
+	{ "uchar::operator<::(::uchar::)", "bool" },
+	{ "uchar::operator<::(::long_long::)", "bool" },
+
+	{ "uchar::operator>=::(::int::)", "bool" },
+	{ "uchar::operator>=::(::float::)", "bool" },
+	{ "uchar::operator>=::(::double::)", "bool" },
+	{ "uchar::operator>=::(::char::)", "bool" },
+	{ "uchar::operator>=::(::uchar::)", "bool" },
+	{ "uchar::operator>=::(::long_long::)", "bool" },
+
+	{ "uchar::operator<=::(::int::)", "bool" },
+	{ "uchar::operator<=::(::float::)", "bool" },
+	{ "uchar::operator<=::(::double::)", "bool" },
+	{ "uchar::operator<=::(::char::)", "bool" },
+	{ "uchar::operator<=::(::uchar::)", "bool" },
+	{ "uchar::operator<=::(::long_long::)", "bool" },
+
+	{ "uchar::operator&&::(::int::)", "bool" },
+	{ "uchar::operator&&::(::float::)", "bool" },
+	{ "uchar::operator&&::(::double::)", "bool" },
+	{ "uchar::operator&&::(::char::)", "bool" },
+	{ "uchar::operator&&::(::uchar::)", "bool" },
+	{ "uchar::operator&&::(::long_long::)", "bool" },
+
+	{ "uchar::operator||::(::int::)", "bool" },
+	{ "uchar::operator||::(::float::)", "bool" },
+	{ "uchar::operator||::(::double::)", "bool" },
+	{ "uchar::operator||::(::char::)", "bool" },
+	{ "uchar::operator||::(::uchar::)", "bool" },
+	{ "uchar::operator||::(::long_long::)", "bool" },
+
+	{ "operator!::(::uchar::)", "bool" },
+
+	{ "operator?*::(::uchar*::)", "uchar" },
+
+	{ "uchar::operator[]::(::int::)", "uchar&" },
+	{ "uchar::operator[]::(::char::)", "uchar&" },
+	{ "uchar::operator[]::(::bool::)", "uchar&" },
+	{ "uchar::operator[]::(::long_long::)", "uchar&" },
+
+	{ "uchar::operator!=::(::int::)", "bool" },
+	{ "uchar::operator!=::(::float::)", "bool" },
+	{ "uchar::operator!=::(::double::)", "bool" },
+	{ "uchar::operator!=::(::char::)", "bool" },
+	{ "uchar::operator!=::(::uchar::)", "bool" },
+	{ "uchar::operator!=::(::long_long::)", "bool" },
+
+	{ "uchar::operator==::(::int::)", "bool" },
+	{ "uchar::operator==::(::float::)", "bool" },
+	{ "uchar::operator==::(::double::)", "bool" },
+	{ "uchar::operator==::(::char::)", "bool" },
+	{ "uchar::operator==::(::uchar::)", "bool" },
+	{ "uchar::operator==::(::long_long::)", "bool" },
+
+	{ "uchar::operator%::(::int::)", "uchar" },
+	{ "uchar::operator%::(::long_long::)", "uchar" },
+	{ "uchar::operator%::(::char::)", "uchar" },
+	{ "uchar::operator%::(::bool::)", "uchar" },
+	{ "uchar::operator%::(::uchar::)", "uchar" },
+
 	//long long
 	{ "long_long::operator+::(::int::)", "long_long" },
 	{ "long_long::operator+::(::float::)", "long_long" },
 	{ "long_long::operator+::(::double::)", "long_long" },
 	{ "long_long::operator+::(::char::)", "long_long" },
 	{ "long_long::operator+::(::long_long::)", "long_long" },
+
+	{ "long_long::operator&::(::int::)", "long_long" },
+	{ "long_long::operator&::(::char::)", "long_long" },
+	{ "long_long::operator&::(::long_long::)", "long_long" },
+	{ "long_long::operator&::(::bool::)", "long_long" },
+
+	{ "long_long::operator|::(::int::)", "long_long" },
+	{ "long_long::operator|::(::char::)", "long_long" },
+	{ "long_long::operator|::(::long_long::)", "long_long" },
+	{ "long_long::operator|::(::bool::)", "long_long" },
+
+	{ "long_long::operator^::(::int::)", "long_long" },
+	{ "long_long::operator^::(::char::)", "long_long" },
+	{ "long_long::operator^::(::long_long::)", "long_long" },
+	{ "long_long::operator^::(::bool::)", "long_long" },
 
 	{ "long_long::operator=::(::int::)", "long_long&" },
 	{ "long_long::operator=::(::float::)", "long_long&" },
@@ -636,6 +837,117 @@ Ariphmetic_module::Ariphmetic_module(const std::vector<Lexem>& rpn, Processor* p
 			//					  | || |\  | | |  
 			//					 |___|_| \_| |_|  
 			//----------------------------------------------------
+size_t Ariphmetic_module::int_calc2(Lexem& rpn_obj) {//int 2
+	Lexem end_of_block("", unknown_name, unknown_name, 0, "", "");
+	Lexem main_data("", unknown_name, unknown_name, 0, "", "");
+	Lexem begin_of_block("", unknown_name, unknown_name, 0, "", "");
+	MemoryBlock mem;
+	std::vector<Lexem> data;
+	if (rpn_obj.type_signature == "int::int::operator+::(::uchar::)")
+	{
+		int left_ = 0; unsigned char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "int::int::operator-::(::uchar::)")
+	{
+		int left_ = 0; unsigned  char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "int::int::operator*::(::uchar::)")
+	{
+		int left_ = 0; unsigned  char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "int::int::operator/::(::uchar::)")
+	{
+		int left_ = 0; unsigned char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else {
+		return 1;
+	}
+	return 0;
+}
 size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 	Lexem end_of_block("", unknown_name, unknown_name, 0, "", "");
 	Lexem main_data("", unknown_name, unknown_name, 0, "", "");
@@ -1314,6 +1626,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "int::int::operator&::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ & right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "int::int::operator&::(::bool::)")
 	{
 		int left_ = 0; char right_ = 0;
@@ -1422,6 +1759,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "int::int::operator|::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ | right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "int::int::operator|::(::bool::)")
 	{
 		int left_ = 0; char right_ = 0;
@@ -1519,6 +1881,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		}
 		else {
 			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
+		main_data = Lexem("timed obj", int_literal, _int_, 0, "int", "int");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _int_, 1, "int", "int");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ ^ right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "int::int::operator^::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
 		}
 		mem.data.clear();
 		end_of_block = Lexem("end block", _timed_memory_block_end, _int_, 1, "end block", "int");
@@ -2238,6 +2625,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::int::operator==::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::int::operator==::(::bool::)")
 	{
 		int left_ = 0; char right_ = 0;
@@ -2377,6 +2789,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		}
 		else {
 			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::int::operator!=::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
 		}
 		mem.data.clear();
 		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
@@ -2538,6 +2975,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::int::operator&&::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::int::operator&&::(::bool::)")
 	{
 		int left_ = 0; char right_ = 0;
@@ -2677,6 +3139,31 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		}
 		else {
 			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::int::operator||::(::uchar::)")
+	{
+		int left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int32;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int32;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
 		}
 		mem.data.clear();
 		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
@@ -3035,6 +3522,52 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 			processor->call_stack.pop();
 		}
 	}
+	else if (rpn_obj.type_signature == "int&::int::operator=::(::uchar::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+		std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+		long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+		long long temp_variable_addr = -1;
+		auto obj = processor->call_stack.top();
+
+		for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+			if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+				if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+					temp_variable_addr = stack_ind;
+					//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+				}
+				else if (processor->call_stack.stack[stack_ind].new_var == true) {
+					variable_addr = stack_ind;
+					break;
+				}
+			}
+		}
+
+		if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+		processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_int32 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8;
+		processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+		std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+		if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+		else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+			processor->call_stack.pop();
+		}
+		else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			processor->call_stack.pop();
+		}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_int32 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
 	else if (rpn_obj.type_signature == "int&::int::operator=::(::bool::)") {
 		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
 		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
@@ -3268,6 +3801,25 @@ size_t Ariphmetic_module::int_calc(Lexem& rpn_obj) {
 		}
 		else {
 			right_ = processor->call_stack.top().data[0].cs_int8;
+		}
+		size_t next_dimensions_cnt = rpn_obj.cs_int64;
+		size_t sdvig = 1;
+		for (long long i = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size() - next_dimensions_cnt; i < processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size(); i++) {
+			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
+		}
+		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig*right_;
+		processor->call_stack.pop();
+	}
+	else if (rpn_obj.type_signature=="int&::int::operator[]::(::uchar::)") {
+		unsigned char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size()-2].title.link == 0) {
+			throw j_error("ne validnaya link to static array");
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.top().data[0].cs_uint8;
 		}
 		size_t next_dimensions_cnt = rpn_obj.cs_int64;
 		size_t sdvig = 1;
@@ -4134,6 +4686,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::bool::operator<::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::bool::operator<::(::long_long::)")
 	{
 		bool left_ = 0; long long right_ = 0;
@@ -4237,6 +4814,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 	else if (rpn_obj.type_signature == "bool::bool::operator<=::(::char::)")
 	{
 		bool left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::bool::operator<=::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
 		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
 			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
 		}
@@ -4384,6 +4986,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::bool::operator>::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::bool::operator>::(::long_long::)")
 	{
 		bool left_ = 0; long long right_ = 0;
@@ -4487,6 +5114,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 	else if (rpn_obj.type_signature == "bool::bool::operator>=::(::char::)")
 	{
 		bool left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::bool::operator>=::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
 		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
 			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
 		}
@@ -4634,6 +5286,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::bool::operator==::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::bool::operator==::(::long_long::)")
 	{
 		bool left_ = 0; long long right_ = 0;
@@ -4737,6 +5414,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 	else if (rpn_obj.type_signature == "bool::bool::operator!=::(::char::)")
 	{
 		bool left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::bool::operator!=::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
 		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
 			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
 		}
@@ -4884,6 +5586,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 		processor->call_stack.pop();
 		processor->call_stack.push(mem);
 	}
+	else if (rpn_obj.type_signature == "bool::bool::operator&&::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
 	else if (rpn_obj.type_signature == "bool::bool::operator&&::(::long_long::)")
 	{
 		bool left_ = 0; long long right_ = 0;
@@ -4987,6 +5714,31 @@ size_t Ariphmetic_module::bool_calc(Lexem& rpn_obj) {
 	else if (rpn_obj.type_signature == "bool::bool::operator||::(::char::)")
 	{
 		bool left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_int8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_int8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::bool::operator||::(::bool::)")
+	{
+		bool left_ = 0; bool right_ = 0;
 		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
 			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_int8;
 		}
@@ -7764,6 +8516,2297 @@ size_t Ariphmetic_module::char_calc(Lexem& rpn_obj) {
 			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
 		}
 		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig*right_;
+		processor->call_stack.pop();
+	}
+	else {
+		return 1;
+	}
+	return 0;
+}
+
+
+//------------------------------------------------------------------
+			//					| |	 | |/ ___| | | |   / \   |  _ \
+			//					| |	 | || |  | |_| |  / _ \  | |_) |
+			//					| |__| || |__|  _  | / ___ \ |  _ <
+			//					|______|\____|_| |_|/__/ \__\| | \_\
+			//------------------------------------------------------
+size_t Ariphmetic_module::uchar_calc(Lexem& rpn_obj) {
+	Lexem end_of_block("", unknown_name, unknown_name, 0, "", "");
+	Lexem main_data("", unknown_name, unknown_name, 0, "", "");
+	Lexem begin_of_block("", unknown_name, unknown_name, 0, "", "");
+	MemoryBlock mem;
+	std::vector<Lexem> data;
+	//uchar +
+	if (rpn_obj.type_signature == "uchar::uchar::operator+::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "uchar");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "uchar", "uchar");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "uchar", "uchar");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator+::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator+::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator+::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator+::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ + right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar *
+	else if (rpn_obj.type_signature == "uchar::uchar::operator*::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator*::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator*::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator*::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator*::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ * right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar -
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::)")
+	{
+		unsigned char left_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = -left_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator-::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ - right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar /
+	else if (rpn_obj.type_signature == "uchar::uchar::operator/::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator/::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator/::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator/::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator/::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ / right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar &
+	else if (rpn_obj.type_signature == "uchar::uchar::operator&::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ & right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator&::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ & right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator&::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ & right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator&::(::double::)") {
+		throw  j_error("Nelzya & between int and double");
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator&::(::float::)") {
+		throw  j_error("Nelzya & between int and float");
+	}
+	//uchar |
+	else if (rpn_obj.type_signature == "uchar::uchar::operator|::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ | right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator|::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ | right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator|::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ | right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator|::(::double::)") {
+		throw  j_error("Nelzya | between int and double");
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator|::(::float::)") {
+		throw  j_error("Nelzya | between int and float");
+	}
+	//uchar ^
+	else if (rpn_obj.type_signature == "uchar::uchar::operator^::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ ^ right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator^::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ ^ right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator^::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ ^ right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator^::(::double::)") {
+		throw  j_error("Nelzya ^ between bool and double");
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator^::(::float::)") {
+		throw  j_error("Nelzya ^ between bool and float");
+	}
+	//uchar <
+	else if (rpn_obj.type_signature == "bool::uchar::operator<::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ < right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar <=
+	else if (rpn_obj.type_signature == "bool::uchar::operator<=::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<=::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<=::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<=::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator<=::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ <= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar >
+	else if (rpn_obj.type_signature == "bool::uchar::operator>::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ > right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar >=
+	else if (rpn_obj.type_signature == "bool::uchar::operator>=::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>=::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>=::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>=::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator>=::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ >= right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar ==
+	else if (rpn_obj.type_signature == "bool::uchar::operator==::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator==::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator==::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator==::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator==::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ == right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar !=
+	else if (rpn_obj.type_signature == "bool::uchar::operator!=::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator!=::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator!=::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator!=::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator!=::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ != right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar &&
+	else if (rpn_obj.type_signature == "bool::uchar::operator&&::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator&&::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator&&::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator&&::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator&&::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ && right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar ||
+	else if (rpn_obj.type_signature == "bool::uchar::operator||::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator||::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator||::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator||::(::double::)") {
+		unsigned char left_ = 0; double right_ = 0.0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "bool::uchar::operator||::(::float::)") {
+		unsigned char left_ = 0; float right_ = 0.0f;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_float32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_float32;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _bool_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _bool_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _bool_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ || right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar !
+	else if (rpn_obj.type_signature == "bool::operator!::(::uchar::)")
+	{
+		unsigned char arg;
+		if (processor->call_stack.stack.back().title.link) {
+			arg = processor->call_stack.stack[processor->call_stack.stack.back().title.link].data[0].cs_uint8;
+		}
+		else {
+			arg = processor->call_stack.stack.back().data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "bool");
+		main_data = Lexem("timed obj", int_literal, _u_char_, 0, "bool", "bool");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "bool", "bool");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = !arg;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	//uchar %
+	else if (rpn_obj.type_signature == "uchar::uchar::operator%::(::int::)")
+	{
+		unsigned char left_ = 0; int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int32;
+		}
+
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ % right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator%::(::char::)")
+	{
+		unsigned char left_ = 0; char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_uint8;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_uint8;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ % right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator%::(::long_long::)")
+	{
+		unsigned char left_ = 0; long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			left_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].data[0].cs_uint8;
+		}
+		else {
+			left_ = processor->call_stack.stack[processor->call_stack.stack.size() - 2].data[0].cs_uint8;
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.stack[processor->call_stack.stack.size() - 1].data[0].cs_int64;
+		}
+		mem.data.clear();
+		end_of_block = Lexem("end block", _timed_memory_block_end, _u_char_, 1, "end block", "char");
+		main_data = Lexem("timed obj", char_symbol, _u_char_, 0, "char", "char");
+		begin_of_block = Lexem("timed obj", _timed_memory_block_begin, _u_char_, 1, "char", "char");
+		main_data.cs_uint8 = main_data.cs_int32 = main_data.cs_int64 = left_ % right_;
+		mem = MemoryBlock(begin_of_block, main_data, end_of_block, 1);
+		processor->call_stack.pop();
+		processor->call_stack.pop();
+		processor->call_stack.push(mem);
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator%::(::double::)") {
+		throw j_error("ostatok int na double nelzya!");
+	}
+	else if (rpn_obj.type_signature == "uchar::uchar::operator%::(::float::)") {
+		throw j_error("ostatok int na float nelzya!");
+	}
+	//ostream uchar
+	else if (rpn_obj.type_signature == "ostream&::operator<<::(::ostream&::uchar::)") {
+		unsigned char arg;
+		if (processor->call_stack.stack.back().title.link) {
+			arg = processor->call_stack.stack[processor->call_stack.stack.back().title.link].data[0].cs_uint8;
+		}
+		else {
+			arg = processor->call_stack.stack.back().data[0].cs_uint8;
+		}
+		std::cout << arg;
+		processor->call_stack.pop();
+	}
+	//istream uchar
+	else if (rpn_obj.type_signature == "istream&::operator>>::(::istream&::uchar::)") {
+		long long index = 0;
+		if (processor->call_stack.stack.back().title.link) {
+			index = processor->call_stack.stack.back().title.link;
+		}
+		else {
+			for (long long c = processor->call_stack.size() - 2; c > -1; c--) {
+				if (processor->call_stack.stack[c].title.text == processor->call_stack.top().title.text) {
+					index = c;
+					break;
+				}
+			}
+		}
+		std::cin >> processor->call_stack.stack[index].data[0].cs_uint8;
+		processor->call_stack.stack[index].data[0].cs_int32 = processor->call_stack.stack[index].data[0].cs_int64 = processor->call_stack.stack[index].data[0].cs_uint8;
+		processor->call_stack.pop();
+	}
+	//uchar copy operator
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::int::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_int32;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_int32;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::char::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_int8;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_int8;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::uchar::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::long_long::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_int64;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_int64;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::float::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_float32;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_float32;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::double::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+			long long variable_addr = variable_addr = processor->call_stack.size() - 1;
+			long long temp_variable_addr = -1;
+			auto obj = processor->call_stack.top();
+
+			for (long long stack_ind = processor->call_stack.size() - 1; stack_ind > -1; stack_ind--) {
+				if (processor->call_stack.stack[stack_ind].title.text == obj.title.text) {
+					if (processor->call_stack.stack[stack_ind].new_var == false && temp_variable_addr == -1) {
+						temp_variable_addr = stack_ind;
+						//processor->call_stack.stack.erase(processor->call_stack.stack.begin() + stack_ind);
+					}
+					else if (processor->call_stack.stack[stack_ind].new_var == true) {
+						variable_addr = stack_ind;
+						break;
+					}
+				}
+			}
+
+			if (temp_variable_addr == -1) temp_variable_addr = variable_addr;
+			processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 2].data[0].cs_float64;
+			processor->call_stack.stack[temp_variable_addr].data = processor->call_stack.stack[processor->call_stack.size() - 2].data;
+			std::swap(processor->call_stack.stack[temp_variable_addr].data, processor->call_stack.stack[variable_addr].data);
+
+			if (!processor->call_stack.top().new_var && !processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 2].new_var) {
+				processor->call_stack.pop();
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - 1].new_var) {
+				std::swap(processor->call_stack.stack[processor->call_stack.size() - 1], processor->call_stack.stack[processor->call_stack.size() - 2]);
+				processor->call_stack.pop();
+			}
+		}
+		else {
+			processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].cs_float64;
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			processor->call_stack.stack[addr].data = processor->call_stack.top().data;
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator=::(::string::)") {
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) { processor->call_stack.stack[processor->call_stack.size() - 1] = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link]; processor->call_stack.stack[processor->call_stack.size() - 1].new_var = false; }
+		if (!processor->call_stack.stack[processor->call_stack.size() - 2].title.link) {
+			throw j_error("string can be copy to array!");
+		}
+		else {
+			size_t addr = processor->call_stack.stack[processor->call_stack.size() - 2].title.link;
+			std::string right_name = processor->call_stack.stack[addr].title.text;
+			size_t now_addr = addr;
+			while (processor->call_stack.stack[now_addr].title.text == right_name && processor->call_stack.stack[now_addr].new_var) {
+				if (now_addr - addr >= processor->call_stack.top().data[0].text.size()) break;
+				processor->call_stack.stack[now_addr].data[0].text = processor->call_stack.stack[now_addr].data[0].cs_uint8 = processor->call_stack.stack[processor->call_stack.size() - 1].data[0].text[now_addr - addr];
+				now_addr++;
+			}
+
+			processor->call_stack.pop();
+			processor->call_stack.pop();
+		}
+	}
+	//char operator[]
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator[]::(::int::)") {
+		int right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link == 0) {
+			throw j_error("ne validnaya link to static array");
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int32;
+		}
+		else {
+			right_ = processor->call_stack.top().data[0].cs_int32;
+		}
+		size_t next_dimensions_cnt = rpn_obj.cs_int64;
+		size_t sdvig = 1;
+		for (long long i = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size() - next_dimensions_cnt; i < processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size(); i++) {
+			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
+		}
+		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig * right_;
+		processor->call_stack.pop();
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator[]::(::long_long::)") {
+		long long right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link == 0) {
+			throw j_error("ne validnaya link to static array");
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int64;
+		}
+		else {
+			right_ = processor->call_stack.top().data[0].cs_int64;
+		}
+		size_t next_dimensions_cnt = rpn_obj.cs_int64;
+		size_t sdvig = 1;
+		for (long long i = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size() - next_dimensions_cnt; i < processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size(); i++) {
+			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
+		}
+		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig * right_;
+		processor->call_stack.pop();
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator[]::(::char::)") {
+		char right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link == 0) {
+			throw j_error("ne validnaya link to static array");
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.top().data[0].cs_int8;
+		}
+		size_t next_dimensions_cnt = rpn_obj.cs_int64;
+		size_t sdvig = 1;
+		for (long long i = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size() - next_dimensions_cnt; i < processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size(); i++) {
+			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
+		}
+		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig * right_;
+		processor->call_stack.pop();
+	}
+	else if (rpn_obj.type_signature == "uchar&::uchar::operator[]::(::bool::)") {
+		bool right_ = 0;
+		if (processor->call_stack.stack[processor->call_stack.size() - 2].title.link == 0) {
+			throw j_error("ne validnaya link to static array");
+		}
+		if (processor->call_stack.stack[processor->call_stack.size() - 1].title.link) {
+			right_ = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 1].title.link].data[0].cs_int8;
+		}
+		else {
+			right_ = processor->call_stack.top().data[0].cs_int8;
+		}
+		size_t next_dimensions_cnt = rpn_obj.cs_int64;
+		size_t sdvig = 1;
+		for (long long i = processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size() - next_dimensions_cnt; i < processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz.size(); i++) {
+			sdvig *= processor->call_stack.stack[processor->call_stack.stack[processor->call_stack.size() - 2].title.link].title.static_array_sz[i];
+		}
+		processor->call_stack.stack[processor->call_stack.size() - 2].title.link += sdvig * right_;
 		processor->call_stack.pop();
 	}
 	else {
@@ -14248,7 +17291,7 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 
 				//----------------------------------------------------
 			}
-			if (in(rpn_form[i].type, { _operator_os_ })) {
+			if (in(rpn_form[i].type, { _operator_os_, _operator_is_ })) {
 				argc--;
 			}
 			size_t result_signal = 1;
@@ -14259,6 +17302,8 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 			}
 			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "int") {
 				result_signal = int_calc(rpn_form[i]);
+				if (result_signal) 
+					result_signal = int_calc2(rpn_form[i]);
 			}
 			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "bool") {
 				result_signal = bool_calc(rpn_form[i]);
@@ -14277,6 +17322,9 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 			}
 			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "long_long") {
 				result_signal = long_long_calc(rpn_form[i]);
+			}
+			else if (processor->call_stack.stack[processor->call_stack.size() - argc].title.returned_type == "uchar") {
+				result_signal = uchar_calc(rpn_form[i]);
 			}
 			
 
@@ -14319,6 +17367,7 @@ void Ariphmetic_module::Calculate(std::vector<Lexem>& lexem_queue, Lexem_Queue_A
 					cnt++;
 				}
 				processor->call_stack.stack[index_first].title.static_array_sz.push_back(processor->call_stack.top().data[0].cs_int64);
+				if (!processor->call_stack.top().data[0].cs_int64) return;
 				cnt *= processor->call_stack.top().data[0].cs_int64 - 1;
 				processor->call_stack.pop();
 				mem = processor->call_stack.top();

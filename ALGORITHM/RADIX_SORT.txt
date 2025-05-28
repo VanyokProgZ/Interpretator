@@ -1,0 +1,113 @@
+int FUNC_RT;
+
+int foffset(uchar mas[0], int size, int offset, int count[257]){
+	int i = 0;
+	int tmp;
+	int tmp2;
+	while(i < 257){
+		count[i] = 0;
+		i = i + 1;
+	}
+	i = 0;
+	while(i < size){
+		count[0 + mas[offset + i * 4]] = count[0 + mas[offset + i * 4]] + 1;
+		i = i + 1;
+	}
+	tmp = count[0];
+	count[0] = 0;
+	i = 0;
+	while(i < 256){
+		tmp2 = tmp;
+		tmp = count[i+1];
+		count[i+1] = tmp2;
+		count[i+1] = count[i+1] + count[i];
+		i = i + 1;
+	}
+	return 0;
+}
+
+int radix_sort_pos(int mas[0], int size){
+	int i = 0;
+	int j = 0;
+	int swp_ind = 0;
+	int count[257];
+	int tempp[size];
+	int mas2[size];
+	uchar pm[size*4];
+	FUNC_RT = <int>int_to_uchar_array(mas[0], pm[0], size);
+	while(i < 4){
+		FUNC_RT = <int>foffset(pm[0], size, i , count[0]);
+		j = 0;
+		
+		while(j<size){
+			mas2[count[0 + pm[j * 4 + i]]] = mas[j];
+			count[0 + pm[j * 4 + i]] = count[0 + pm[j * 4 + i]] + 1;
+			j = j+1;
+		}
+		swp_ind = 0;
+		while(swp_ind < size){
+			tempp[swp_ind] = mas[swp_ind];
+			swp_ind = swp_ind + 1;
+		}
+		swp_ind = 0;
+		while(swp_ind < size){
+			mas[swp_ind] = mas2[swp_ind];
+			swp_ind = swp_ind + 1;
+		}
+		swp_ind = 0;
+		while(swp_ind < size){
+			mas2[swp_ind] = tempp[swp_ind];
+			swp_ind = swp_ind + 1;
+		}
+		FUNC_RT = <int>int_to_uchar_array(mas[0], pm[0], size);
+		i =  i+1;
+	}
+return 0;
+}
+
+int radix_sort(int mas[0], int size){
+int pos_d = 0;
+int i = 0;
+int gg = 0;
+while(i < size){
+	if(mas[i] < 0){
+		pos_d = pos_d + 1;
+	}
+	i = i + 1;
+}
+int mas1[pos_d];
+int mas2[size - pos_d];
+
+i = 0;
+int j = 0;
+int y = 0;
+while(i < size){
+	if(mas[i] < 0){
+		mas1[j] = 0 - mas[i];
+		j = j + 1;
+	}else{
+		mas2[y] = mas[i];
+		y = y + 1;	
+	}
+	i = i + 1;
+}
+i = <int>radix_sort_pos(mas1[0],pos_d);
+i = pos_d - 1;
+j = 0;
+while(i > -1){
+	mas[j] = 0 - mas1[i];
+	i = i - 1;
+	j = j + 1;
+}
+
+i = <int>radix_sort_pos(mas2[0],size - pos_d);
+i = 0;
+j = pos_d;
+while(i < size-pos_d){
+	mas[i+pos_d] = mas2[i];
+	i = i + 1;
+}
+
+return 0;
+}
+

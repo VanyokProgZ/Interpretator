@@ -35,7 +35,7 @@ public:
 	void print_all() {
 		std::cout << "\033[31mCALL STACK TOP\033[0m\n";
 		for (long long i = stack.size() - 1; i >-1; i--) {
-			std::cout << i<<"]  " << stack[i].title.text << "  ------  " << stack[i].data[0] << "    params: (int8: " << static_cast<int>(stack[i].data[0].cs_int8) << ", int32: " << stack[i].data[0].cs_int32 << ", int64: " << stack[i].data[0].cs_int64 << ", float32: " << stack[i].data[0].cs_float32 << ", float64: " << stack[i].data[0].cs_float64 << ", link: " << stack[i].title.link << ") " << std::endl;
+			std::cout << i<<"]  " << stack[i].title.text << "  ------  " << stack[i].data[0] << "    params: (int8: " << static_cast<int>(stack[i].data[0].cs_int8) << ", uint8: " << static_cast<int>(stack[i].data[0].cs_uint8) << ", int32: " << stack[i].data[0].cs_int32 << ", int64: " << stack[i].data[0].cs_int64 << ", float32: " << stack[i].data[0].cs_float32 << ", float64: " << stack[i].data[0].cs_float64 << ", link: " << stack[i].title.link << ") " << std::endl;
 		}
 		std::cout << "\033[31mCALL STACK BOTTOM\033[0m\n";
 	}

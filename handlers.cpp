@@ -41,6 +41,7 @@ handleClassNames::handleClassNames() {
 	class_sizes["long_long"] = 1;
 	class_sizes["bool"] = 1;
 	class_sizes["string"] = 1;
+	class_sizes["uchar"] = 1;
 };
 void handleClassNames::add_class_name(const std::string& name) {
 	class_names.insert(name);

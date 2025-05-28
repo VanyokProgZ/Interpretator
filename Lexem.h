@@ -93,6 +93,10 @@ enum LEXEM_TYPES
 	if_body_open_bracket = 407,
 	if_body_close_bracket = 408,
 
+	//битовые операции
+	bin_operator_and = 415,
+	bin_operator_or = 416,
+	bin_operator_xor = 417,
 
 	//типы данных
 	_void_ = 500,
@@ -106,6 +110,7 @@ enum LEXEM_TYPES
 	new_var = 598,
 	_data_type_ = 597,
 	_string_ = 507,
+	_u_char_ = 508,
 
 	//пользовательская типизация
 	_class_ = 550,
@@ -145,13 +150,14 @@ public:
 	int cs_int32;
 	long long cs_int64;
 	char cs_int8;
+	unsigned char cs_uint8;
 	size_t link = 0;
 	//
 	//for static_array
 	std::vector<size_t> static_array_sz;
 
 	Lexem() {
-		cs_float32 = cs_float64 = cs_int8 = cs_int32 = cs_int64 = 0;
+		cs_float32 = cs_float64 = cs_int8 = cs_uint8 = cs_int32 = cs_int64 = 0;
 		link = 0;
 		text = type_signature = "";
 		type = data_type=unknown_name;

@@ -11,6 +11,9 @@ std::map<size_t, size_t> OPERATION_PRIORITY
 	{operator_copy, 2},
 	{operator_logic_or,4},
 	{operator_logic_and,5},
+	{bin_operator_or,6},
+	{bin_operator_xor,7},
+	{bin_operator_and,8},
 	{operator_eq,9},
 	{operator_ne,9},
 	{operator_gr,10},
@@ -35,7 +38,7 @@ std::vector<Lexem> translate_to_rpn(std::vector<Lexem>& infix) {
 	std::stack<Lexem> stack;
 	size_t last_var = 0;
 	for (auto& el : infix) {
-		if (el.type == _comma_ || el.type==_data_type_ || el.type==sq_bracket_close) continue;
+		if (el.type == _comma_ || el.type==_data_type_ || el.data_type==unknown_name) continue;
 		if (el.type == sq_bracket_open) {
 			el.type_signature = "operator[]";
 			if (last_var == 1) {
@@ -49,7 +52,15 @@ std::vector<Lexem> translate_to_rpn(std::vector<Lexem>& infix) {
 			}
 			stack.pop();
 		}
-		else if (el.type == round_bracket_open) {
+		else if (el.type == sq_bracket_close) {
+			while (stack.top().type != sq_bracket_open) {
+				res.push_back(stack.top());
+				stack.pop();
+			}
+			res.push_back(stack.top());
+			stack.pop();
+		}
+		else if (el.type == round_bracket_open || el.type == sq_bracket_open) {
 			stack.push(el);
 		}
 		else if (/*el.type == 53 || */el.type == var_name || el.type==new_var || el.type==double_literal || el.type==int_literal || el.type == char_symbol || el.type==new_static_array || el.type==static_array || el.type==_string_) {

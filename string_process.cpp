@@ -213,6 +213,15 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
             else if (v[i] == "*") {
                 res.push_back(Lexem("*", operator_multiply, res.back().data_type, 2, "operator*",""));
             }
+            else if (v[i] == "&") {
+                res.push_back(Lexem("&", bin_operator_and, res.back().data_type, 2, "operator&", ""));
+            }
+            else if (v[i] == "|") {
+                res.push_back(Lexem("|", bin_operator_or, res.back().data_type, 2, "operator|", ""));
+            }
+            else if (v[i] == "^") {
+                res.push_back(Lexem("^", bin_operator_xor, res.back().data_type, 2, "operator^", ""));
+            }
             else if (v[i] == "=") {
                 res.push_back(Lexem("=", operator_copy, res.back().data_type, 2, "operator=", ""));
             }
@@ -658,6 +667,11 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
             }
             else if (v[i] == "float") {
                 res.push_back(Lexem("float", _data_type_,_float_,0,"float","float"));
+                next_var_name = 1;
+                continue;
+            }
+            else if (v[i] == "uchar") {
+                res.push_back(Lexem("uchar", _data_type_, _u_char_, 0, "uchar", "uchar"));
                 next_var_name = 1;
                 continue;
             }

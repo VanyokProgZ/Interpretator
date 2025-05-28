@@ -25,6 +25,7 @@ Lexem& Lexem::operator=(const Lexem& right) {
 	cs_int32 = right.cs_int32;
 	cs_int64 = right.cs_int64;
 	cs_int8 = right.cs_int8;
+	cs_uint8 = right.cs_uint8;
 	type = right.type;
 	arg_c = right.arg_c;
 	data_type = right.data_type;
