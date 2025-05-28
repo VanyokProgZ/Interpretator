@@ -1,0 +1,217 @@
+int eratosphen(int n, int prime[0])
+{
+int ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+int j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+int eratosphen(long_long n, long_long prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+int eratosphen(long_long n, int prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+int eratosphen(int n, long_long prime[0])
+{
+int ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+int j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+int eratosphen(int n, bool prime[0])
+{
+int ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+int j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+long_long eratosphen(long_long n, long_long prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+long_long eratosphen(long_long n, bool prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+long_long eratosphen(int n, long_long prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+long_long eratosphen(long_long n, int prime[0])
+{
+long_long ind = 2;
+while(ind < n+1){
+	prime[ind] = 1;
+	ind = ind + 1;
+}
+long_long j;
+ind = 2;
+while(ind<=n){
+	if(prime[ind]){
+		if(ind*ind <= n){
+			j = ind*ind;
+			while(j<=n){
+				prime[j] = 0;
+				j = j + ind;
+			}
+		}
+	}
+	ind = ind+1;
+	
+}
+return 0;
+}
+
