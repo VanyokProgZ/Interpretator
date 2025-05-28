@@ -3,7 +3,12 @@
 
 size_t Lexem_Queue_Assembler::instruction_definer() {
 	auto rpn_form = translate_to_rpn(lexem_queue);
+
+	if (continue_mode) {
+		rpn_form = lexem_queue;
+	}
 	Ariphmetic_module calculator(rpn_form, processor);
+	continue_mode = false;
 	calculator.Calculate(lexem_queue, *this);
 	lexem_queue.clear();
 	return 0;
@@ -89,7 +94,7 @@ void Lexem_Queue_Assembler::push_back(const Lexem& lexem) {
 							lexem_queue.push_back(lexem);
 							states.push_back(31);//ждем открывающей скобки начала аргументов
 						}
-						states[states.size() - 2] = 35;
+						states[states.size() - processor->if_signals.back()-1] = 35;
 					}
 					else if (states.back() == 35) {
 						if (processor->if_signals.back()) {
@@ -124,7 +129,7 @@ void Lexem_Queue_Assembler::push_back(const Lexem& lexem) {
 							lexem_queue.push_back(lexem);
 							states.push_back(1);//ждем открывающей скобки начала аргументов
 						}
-						states[states.size() - 2] = 35;
+						states[states.size() - processor->if_signals.back()-1] = 35;
 					}
 					else if (states.back() == 35) {
 						if (processor->if_signals.back()) {
@@ -352,4 +357,4 @@ void Lexem_Queue_Assembler::push_back(const Lexem& lexem) {
 	}
 }
 
-Lexem_Queue_Assembler::Lexem_Queue_Assembler(Processor* p) :processor(p), arg_brackets_is_working(0),signature(""),cnt_brackets_eq(0) {};
+Lexem_Queue_Assembler::Lexem_Queue_Assembler(Processor* p) :processor(p), arg_brackets_is_working(0),signature(""),cnt_brackets_eq(0),state(0),continue_mode(0) {};

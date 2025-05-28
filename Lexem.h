@@ -81,6 +81,7 @@ enum LEXEM_TYPES
 	deferencing_operator = 43004,
 	static_array = 43005,
 	new_static_array = 43006,
+	delete_operator = 43007,
 
 	//скобки
 	round_bracket_open = 401,

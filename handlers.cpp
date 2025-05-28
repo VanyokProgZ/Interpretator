@@ -39,6 +39,8 @@ handleClassNames::handleClassNames() {
 	class_sizes["char"] = 1;
 	class_sizes["float"] = 1;
 	class_sizes["long_long"] = 1;
+	class_sizes["bool"] = 1;
+	class_sizes["string"] = 1;
 };
 void handleClassNames::add_class_name(const std::string& name) {
 	class_names.insert(name);

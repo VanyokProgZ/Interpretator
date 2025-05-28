@@ -1,4 +1,5 @@
 #include "code_segment.h"
+#include "preprocess.h"
 
 CodeSegment::CodeSegment(const std::vector<std::string>& v) {
 	code_rows = v;
@@ -36,6 +37,7 @@ void from_file_to_code_segment(const std::string& file_name, CodeSegment& segmen
 	for (auto& el : v) {
 		cut_white_begin(el); past_spaces(el);
 	}
+	INSERT_FILE(v);
 	segment = CodeSegment(v);
 }
 

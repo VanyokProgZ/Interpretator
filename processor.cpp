@@ -53,6 +53,7 @@ void Processor::run() {
 		past_spaces(current_row);
 
 		if (code_segment.isEmpty()) GLOBAL_SCAN = true;
+
 		auto lexems_row = lexemize_row(current_row, Class_names_list);
 
 		for (size_t i = 0; i < lexems_row.size(); i++) {

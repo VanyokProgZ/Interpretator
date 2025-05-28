@@ -21,4 +21,5 @@ public:
 	size_t float_calc(Lexem& rpn_);
 	size_t double_calc(Lexem& rpn_);
 	size_t string_calc(Lexem& rpn_);
+	size_t long_long_calc(Lexem& rpn_);
 };

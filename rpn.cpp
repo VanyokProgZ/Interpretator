@@ -25,7 +25,8 @@ std::map<size_t, size_t> OPERATION_PRIORITY
 	{operator_logic_not,14},
 	{sq_bracket_open,17},
 	{sq_bracket_close,17},
-	{call_function,20}
+	{call_function,20},
+	{delete_operator,20},
 	});
 
 std::vector<Lexem> translate_to_rpn(std::vector<Lexem>& infix) {

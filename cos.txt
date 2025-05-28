@@ -1,0 +1,252 @@
+float cos_p(float x, int i)
+{
+    float cres = -(x * x) / (2*i*(2*i-1));
+    return cres;
+}
+float cos_p(double x, int i)
+{
+    float cres = -(x * x) / (2*i*(2*i-1));
+    return cres;
+}
+double cos_p(float x, int i)
+{
+    float cres = -(x * x) / (2*i*(2*i-1));
+    return cres;
+}
+double cos_p(double x, int i)
+{
+    float cres = -(x * x) / (2*i*(2*i-1));
+    return cres;
+}
+
+float cos(float x)
+{
+    int t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    float a = 1;
+    int n = 500;
+    float series_mem[n+1];
+    float res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+float cos(int xx)
+{
+    float x = xx;
+int t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    float a = 1;
+    int n = 500;
+    float series_mem[n+1];
+    float res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+float cos(double xx)
+{
+    float x = xx;
+int t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    float a = 1;
+    int n = 500;
+    float series_mem[n+1];
+    float res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+float cos(long_long xx)
+{
+    float x = xx;
+int t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    float a = 1;
+    int n = 500;
+    float series_mem[n+1];
+    float res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+
+double cos(float x)
+{
+    int t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    double a = 1;
+    int n = 1000;
+    double series_mem[n+1];
+    double res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <double>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+double cos(int xx)
+{
+    double x = xx;
+long_long t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    double a = 1;
+    int n = 1000;
+    double series_mem[n+1];
+    double res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <double>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+double cos(double xx)
+{
+    double x = xx;
+long_long t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    double a = 1;
+    long_long n = 1000;
+    double series_mem[n+1];
+    double res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}
+double cos(long_long xx)
+{
+    double x = xx;
+long_long t1 = x / MATH_CONSTANT_2PI;
+    if(x > 0){
+	x = x - MATH_CONSTANT_2PI*t1;
+	}
+    else{
+	x = x - MATH_CONSTANT_2PI*t1;	
+    }
+    double a = 1;
+    long_long n = 1000;
+    double series_mem[n+1];
+    double res = 0;
+    series_mem[0] = a;
+    int i = 1;
+    while(i <= n) {
+        a = <float>cos_p(x, i) * a;
+        series_mem[i] = a;
+	i = i + 1;
+    }
+    i = n;
+    while(i > -1) {
+        res = res + series_mem[i];
+	i = i - 1;
+    }
+
+    return res;
+}

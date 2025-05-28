@@ -196,21 +196,14 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 continue;
             }
             else if (next_char) {
-                if (res.back().text != "\\") {
-                    std::string tmpstr = ""; tmpstr += v[i - 1]; tmpstr += v[i];
-                    ecran_symbols_in_string(tmpstr);
-                    res.push_back(Lexem(tmpstr, char_symbol, _char_, 0, "char", "char"));
-                }
-                else {
-                    res.push_back(Lexem(v[i], char_symbol, _char_, 0, "char", "char"));
-                }
+                res.push_back(Lexem(v[i], char_symbol, _char_, 0, "char", "char"));
                 continue;
             }
             else if (v[i] == "+") {
                 res.push_back(Lexem("+", operator_plus, res.back().data_type,2,"operator+", ""));
             }else if (v[i] == "-") {
                 res.push_back(Lexem("-", operator_minus, res.back().data_type, 2, "operator-", ""));
-                if (res.size() == 1 || !in(res[res.size() - 2].type, { var_name, call_function, double_literal, int_literal })) {
+                if (res.size() == 1 || !in(res[res.size() - 2].type, { var_name, call_function, double_literal, int_literal,char_symbol,sq_bracket_close,round_bracket_close })) {
                     res.back().arg_c = 1;
                 }
             }
@@ -218,13 +211,7 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 res.push_back(Lexem("/", operator_division, res.back().data_type, 2, "operator/", ""));
             }
             else if (v[i] == "*") {
-                if (in(res.back().type, { var_name, call_function, int_literal, char_symbol, double_literal })) {
-                    res.push_back(Lexem("*", operator_multiply, res.back().data_type, 2, "operator*",""));
-                }
-                else {
-                    res.push_back(Lexem("*", pointer_mark, res.back().data_type, 2, "operator?*", ""));
-                    continue;
-                }
+                res.push_back(Lexem("*", operator_multiply, res.back().data_type, 2, "operator*",""));
             }
             else if (v[i] == "=") {
                 res.push_back(Lexem("=", operator_copy, res.back().data_type, 2, "operator=", ""));
@@ -265,7 +252,7 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 res.push_back(Lexem(">", operator_gr, res.back().data_type, 2, "operator>","bool"));
             }
             else if (v[i] == "<") {
-                if (res.size() && in(res.back().type, { int_literal, double_literal, var_name, new_var, call_function,char_symbol })) {
+                if (res.size() && in(res.back().type, { int_literal, double_literal, var_name, new_var, call_function,char_symbol,sq_bracket_close, round_bracket_close })) {
                     res.push_back(Lexem("<", operator_ls, res.back().data_type, 2, "operator<","bool"));
                 }
                 else{
@@ -747,8 +734,16 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 next_class_name = -1;
                 continue;
             }
+            else if (v[i] == "delete") {
+                res.push_back(Lexem("delete", delete_operator, delete_operator, 1, "delete", "void"));
+            }
             else if (v[i] == "double") {
                 res.push_back(Lexem("double", _data_type_,_double_,0,"double","double"));
+                next_var_name = 1;
+                continue;
+            }
+            else if (v[i] == "string") {
+                res.push_back(Lexem("string", _data_type_, _string_, 0, "string", "string"));
                 next_var_name = 1;
                 continue;
             }
@@ -817,6 +812,11 @@ std::vector<Lexem> lexemize_row(const std::string& row, handleClassNames& hC) { 
                 }
             }
             next_class_name = next_var_name = 0;
+        }
+        else if (v[i] == "long_long") {
+            res.push_back(Lexem("long_long", _data_type_, _long_long_, 0, "long_long", "long_long"));
+            next_var_name = 1;
+            continue;
         }
         else {
                 if (next_class_name) {
