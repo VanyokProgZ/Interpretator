@@ -2,7 +2,6 @@
 
 
 //имена функций
-handleFuncNames::handleFuncNames() {};
 void handleFuncNames::NewFunc(const std::string& signa, size_t pos) {
 	Position[signa] = pos + 1;
 	last_function_signature = signa;
@@ -18,19 +17,6 @@ void handleFuncNames::DelFunc(const std::string& signa) {
 }
 std::vector<std::string> handleFuncNames::get_Args(const std::string& signa) { return Args[signa]; }
 void handleFuncNames::set_Args(const std::string& signa, const std::vector<std::string>& args) {Args[signa] = args;}
-
-//изначальные строки
-handleStrings::handleStrings() {};
-void handleStrings::NewString(const std::string& str, size_t pos) {
-	Strings[pos + 1].push_back(str);
-}
-bool handleStrings::StringExist(size_t pos) {
-	return Strings[pos + 1].size();
-}
-std::string handleStrings::GetString(size_t pos, size_t arrpos) {
-	return Strings[pos + 1][arrpos];
-}
-
 
 //имена классов
 handleClassNames::handleClassNames() {

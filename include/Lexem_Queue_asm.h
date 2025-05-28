@@ -10,7 +10,7 @@ class Lexem_Queue_Assembler {
 	int state;
 	
 	std::vector<std::string> args;
-	std::vector<std::string >class_name_space = {};
+	std::vector<std::string >class_name_space;
 	std::string signature;
 	std::vector<long long> states;
 	std::vector<long long> brackets;

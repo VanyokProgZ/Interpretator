@@ -1,25 +1,15 @@
-# INSERT_FILE MATH.txt
-# INSERT_FILE ALGORITHM.txt
-int res = 0;
+# INSERT_FILE sample/include/MATH/ERATOSPHEN.txt
 
 int main(){
-
-	int a[2][2];
-	int b[2][2];
-	int c[2][2];
-	
-	a[0][0] = 1;
-	a[0][1] = 2;
-	a[1][0] = 3;
-	a[1][1] = 4;
-	b[0][0] = 11;
-	b[0][1] = 22;
-	b[1][0] = 33;
-	b[1][1] = 44;
-	cout << a[0][0] << ' ' << a[0][1] << endl << a[1][0] << ' ' << a[1][1] << endl;
-	cout << b[0][0] << ' ' << b[0][1] << endl << b[1][0] << ' ' << b[1][1] << endl;
-	
-	res = <int>mult_matrix(a[0][0], b[0][0], c[0][0], 2,2,2);
-	cout << c[0][0] << ' ' << c[0][1] << endl << c[1][0] << ' ' << c[1][1] << endl;
+	int N = 5000;
+	int er[N];
+	0 = <int>eratosphen(N, er[0]);
+	int i = 0;
+	while(i < N){
+		if(er[i]){
+			cout << i << ' ';
+		}
+		i = i + 1;
+	}
 return 0;
 }

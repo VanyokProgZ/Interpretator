@@ -6,7 +6,7 @@
 #include "Lexem_Queue_asm.h"
 
 class Ariphmetic_module {
-	std::vector<std::string >class_name_space = { };
+	std::vector<std::string >class_name_space;
 	std::vector<Lexem> rpn_form;
 	Processor* processor;
 

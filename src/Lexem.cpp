@@ -1,7 +1,15 @@
 #include "Lexem.h"
 
+Lexem::Lexem() {
+	cs_float32 = cs_float64 = cs_int8 = cs_uint8 = cs_int32 = cs_int64 = 0;
+	link = 0;
+	text = type_signature = "";
+	type = data_type = unknown_name;
+	arg_c = 0;
+}
+
 Lexem::Lexem(const std::string& s_, std::size_t t, size_t dat_t, size_t arg_c_, const std::string type_sign_, const std::string& ret_type) :text(s_), type(t),data_type(dat_t),arg_c(arg_c_),type_signature(type_sign_)
-,cs_float32(0.0f),cs_float64(0.0),cs_int32(0),cs_int64(0),cs_int8(0),returned_type(ret_type),static_array_sz(),link(0){};
+,cs_float32(0.0f),cs_float64(0.0),cs_int32(0),cs_int64(0),cs_int8(0),cs_uint8(0), returned_type(ret_type), static_array_sz(), link(0) {};
 
 bool in(size_t type, const std::vector<size_t>& v) {
 	for (auto& el : v) {
