@@ -1,0 +1,22 @@
+double binpow(double a, int b){
+double res = 1.0;
+while(b>0){
+	if(b%2 == 1){
+		res = a*res;
+	}
+	b = b/2;
+	a = a*a;
+}
+return res;
+}
+int binpow(int a, int b){
+int res = 1;
+while(b>0){
+	if(b%2 == 1){
+		res = a*res;
+	}
+	b = b/2;
+	a = a*a;
+}
+return res;
+}
